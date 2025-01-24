@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rhtap14-gitquaart-test-gitops
+  description: This is GitOps manifest for rhtap14-gitquaart-test   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: rhtap14-gitquaart-test
+    backstage.io/kubernetes-id: rhtap14-gitquaart-test 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: rhtap14-gitquaart-test   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rhtap14-gitquaart-test
